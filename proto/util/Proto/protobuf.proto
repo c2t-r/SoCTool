@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+message field {
+    string snake_case = 1;
+    uint32 field_number = 3;
+    uint32 field_label = 4;
+    uint32 field_type = 5;
+    string import = 6;
+    string camel_case = 10;
+}
+
+message enum_field {
+    string key = 1;
+    uint32 value = 2;
+}
+
+message enum {
+    string enum_name = 1;
+    repeated enum_field enum_field_list = 2;
+}
+
+message message {
+    string message_name = 1;
+    repeated field field_list = 2;
+    repeated message message_list = 3;
+    repeated enum enum_list = 4;
+}
+
+message proto_definition {
+    uint32 idk = 9;
+    string proto_type = 11;
+}
+
+message protobuf_template {
+    string name = 1;
+    string package_name = 2;
+    repeated string import_protos = 3;
+    repeated message message_list = 4;
+    repeated enum enum_list = 5;
+    proto_definition proto_definition = 8;
+    string proto_syntax = 12;
+}
+
+message protobuf {
+    protobuf_template protobuf = 1;
+}
