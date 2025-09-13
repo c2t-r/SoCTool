@@ -1,6 +1,6 @@
 # SoC TextMap Tool
 
-This tool decodes and encodes text map files (db_lang) for Sword of Convallaria.
+This tool decodes and encodes text map files (db_lang).
 
 ## Features
 - Decode binary text map (db_lang) to JSON (db_lang.json)
