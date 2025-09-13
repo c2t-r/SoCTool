@@ -15,7 +15,7 @@ python main.py
 ```
 
 No command-line arguments are required. Input/output directories are fixed in the script:
-- Input: ../../SwordOfConvallaria/assets/PB
+- Input: ../../[GAME_NAME]/assets/PB
 - Output (raw JSON): deserialized/
 - Output (protobuf): out/
 
