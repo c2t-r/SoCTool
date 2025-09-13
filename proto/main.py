@@ -1,10 +1,15 @@
+from sys import exit as sysexit
 import json
 import os
 from util.deserializer import bytesToProto
 
-dir = "../../SwordOfConvallaria/assets/PB"
+dir = "/path/to/game/assets/PB"
 deserialized_dir = "deserialized"
 out_dir = "out"
+
+if "path/to/game" in dir:
+    print('replace var [dir] in this script with your game path like ".../Games/CoolGame/assets/PB"')
+    sysexit()
 
 def switch(field: int):
     v_label= field["field_label"]
@@ -93,7 +98,7 @@ for file in os.listdir(dir):
     with open(os.path.join(deserialized_dir, file.replace(".proto", ".json")), "w", encoding="utf-8") as f:
         json.dump(deserialized, f, ensure_ascii=False, indent=4)
     
-    out = "// this proto is dumped by c2t-r\n"
+    out = "// this proto is parsed by SoC proto Tool by c2t-r\n"
     out += f'syntax = "{deserialized["protobuf"]["proto_syntax"]}";\n\n'
     out += f'package {deserialized["protobuf"]["package_name"]};\n'
     if deserialized["protobuf"]["import_protos"]:
